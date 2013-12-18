@@ -1,0 +1,184 @@
+﻿<UserControl x:Class="GraphicLayerGoogleExport.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:col="http://schemas.datacontract.org/2004/07/System.Collections.Generic"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.Resources>
+            <esri:SimpleFillSymbol x:Key="RedFillSymbol" Fill="#66FF0000" BorderBrush="Red" BorderThickness="2" />
+            <esri:SimpleLineSymbol x:Key="CartoLineSymbol" Color="Green" Width="4"  />
+            <esri:SimpleMarkerSymbol x:Key="RedMarkerSymbol" Color="Red" Size="12" Style="Circle" />
+            <esri:SimpleMarkerSymbol x:Key="MarkerSymbol" Color="Blue" Size="12" Style="Diamond" />
+            <esri:MarkerSymbol x:Key="esriBusinessMarker_94" OffsetX="6.53335" OffsetY="6.53335">
+                <esri:MarkerSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Grid RenderTransformOrigin="0.5,0.5" Width="13.0667" Height="13.0667">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Path Fill="Black" Data="F1 M 13.0667,12.2646C 13.0667,12.5018 12.9826,12.6948 12.8144,12.8435C 12.6462,12.9923 12.4503,13.0667 12.2267,13.0667L 0.8575,13.0667C 0.608611,13.0667 0.403472,12.9923 0.242083,12.8435C 0.0806943,12.6948 1.26225e-007,12.5018 1.26225e-007,12.2646L 1.26225e-007,0.875C 1.26225e-007,0.628052 0.0806943,0.420441 0.242083,0.252289C 0.403472,0.0840759 0.608611,0 0.8575,0L 12.2267,0C 12.4503,0 12.6462,0.0840759 12.8144,0.252289C 12.9826,0.420441 13.0667,0.628052 13.0667,0.875L 13.0667,12.2646 Z M 12.9354,12.2821L 12.9354,0.877899C 12.9354,0.677612 12.8669,0.503082 12.7298,0.35437C 12.5927,0.205597 12.425,0.131226 12.2267,0.131226L 0.8575,0.131226C 0.6475,0.131226 0.470556,0.205597 0.326667,0.35437C 0.182778,0.503082 0.110834,0.677612 0.110834,0.877899L 0.110834,12.2821C 0.110834,12.4823 0.182778,12.6539 0.326667,12.7969C 0.470556,12.9398 0.6475,13.0112 0.8575,13.0112L 12.2267,13.0112C 12.425,13.0112 12.5927,12.9398 12.7298,12.7969C 12.8669,12.6539 12.9354,12.4823 12.9354,12.2821 Z" />
+                                <Path Fill="#00FFFFFF" Data="F1 M 12.9354,12.2821L 12.9354,0.877899C 12.9354,0.677612 12.8669,0.503082 12.7298,0.35437C 12.5927,0.205597 12.425,0.131226 12.2267,0.131226L 0.8575,0.131226C 0.6475,0.131226 0.470556,0.205597 0.326667,0.35437C 0.182778,0.503082 0.110834,0.677612 0.110834,0.877899L 0.110834,12.2821C 0.110834,12.4823 0.182778,12.6539 0.326667,12.7969C 0.470556,12.9398 0.6475,13.0112 0.8575,13.0112L 12.2267,13.0112C 12.425,13.0112 12.5927,12.9398 12.7298,12.7969C 12.8669,12.6539 12.9354,12.4823 12.9354,12.2821 Z M 12.6933,12.4133C 12.6933,12.7245 12.5494,12.88 12.2617,12.88L 0.842917,12.88C 0.529862,12.88 0.373334,12.7245 0.373334,12.4133L 0.373334,1.00916C 0.373334,0.684418 0.529862,0.522064 0.842917,0.522064L 12.2617,0.522064C 12.5494,0.522064 12.6933,0.684418 12.6933,1.00916L 12.6933,12.4133 Z" />
+                                <Path Fill="#00FFFFFF" Data="F1 M 12.6933,12.4133C 12.6933,12.7245 12.5494,12.88 12.2617,12.88L 0.842917,12.88C 0.529862,12.88 0.373334,12.7245 0.373334,12.4133L 0.373334,1.00916C 0.373334,0.684418 0.529862,0.522064 0.842917,0.522064L 12.2617,0.522064C 12.5494,0.522064 12.6933,0.684418 12.6933,1.00916L 12.6933,12.4133 Z" />
+                                <Path Fill="Black" Data="F1 M 12.6933,12.4133C 12.6933,12.7245 12.5494,12.88 12.2617,12.88L 0.842917,12.88C 0.529862,12.88 0.373334,12.7245 0.373334,12.4133L 0.373334,1.00916C 0.373334,0.684418 0.529862,0.522064 0.842917,0.522064L 12.2617,0.522064C 12.5494,0.522064 12.6933,0.684418 12.6933,1.00916L 12.6933,12.4133 Z M 5.01958,5.41333L 2.42667,5.41333L 2.42667,8.39999L 5.01958,5.41333 Z M 10.4533,6.05789L 10.4533,5.41333L 6.41083,5.41333L 2.42667,9.98083L 2.42667,10.4533L 6.60042,10.4533L 10.4533,6.05789 Z M 10.4533,10.4533L 10.4358,7.65332L 7.98875,10.4533L 10.4533,10.4533 Z M 9.12917,3.43582C 9.12917,3.21024 9.05722,3.02603 8.91333,2.88309C 8.76944,2.7402 8.5925,2.66873 8.3825,2.66873C 7.97028,2.66873 7.59014,2.82431 7.24208,3.13541C 7.20514,2.82431 7.13708,2.57541 7.03792,2.38876C 6.88819,2.10291 6.69472,1.95999 6.4575,1.95999C 6.06083,1.95999 5.80611,2.33914 5.69333,3.0975C 5.30833,2.78638 4.92917,2.63083 4.55583,2.63083C 4.34389,2.63083 4.16306,2.70569 4.01333,2.85538C 3.86361,3.00513 3.78875,3.19861 3.78875,3.43582C 3.78875,3.65942 3.91319,3.88306 4.16208,4.10666C 4.22431,4.16885 4.33951,4.24033 4.50771,4.32104C 4.6759,4.40173 4.90972,4.51694 5.20917,4.66666L 5.8975,4.66666C 5.84889,4.64136 5.79347,4.61026 5.73125,4.57333C 5.66903,4.53638 5.59417,4.48679 5.50667,4.42456L 5.43083,4.36914C 5.09639,4.05801 4.92917,3.80917 4.92917,3.62247C 4.92917,3.52136 4.99139,3.47083 5.11583,3.47083C 5.3025,3.47083 5.55722,3.59525 5.88,3.84415C 5.94222,3.90637 5.99181,3.95303 6.12208,4.08914L 6.12208,3.97537C 6.12208,3.37845 6.23389,3.07999 6.4575,3.07999C 6.69472,3.07999 6.81333,3.37845 6.81333,3.97537L 6.81333,4.10666C 7.16139,3.69638 7.49778,3.49124 7.8225,3.49124C 7.93333,3.49124 7.98875,3.55347 7.98875,3.67789C 7.98875,3.88986 7.82056,4.13193 7.48417,4.40414C 7.42194,4.45471 7.35681,4.50476 7.28875,4.55435C 7.2207,4.60391 7.14972,4.64136 7.07583,4.66666L 7.78458,4.66666C 7.92069,4.6044 8.06653,4.52664 8.22208,4.43332C 8.37764,4.33997 8.53611,4.24374 8.6975,4.14456C 8.98528,3.89566 9.12917,3.65942 9.12917,3.43582 Z " />
+                            </Canvas>
+                        </Grid>
+
+                    </ControlTemplate>
+                </esri:MarkerSymbol.ControlTemplate>
+            </esri:MarkerSymbol>
+
+
+            <esri:MarkerSymbol x:Key="MarkerSymbol2" OffsetX="6.25" OffsetY="6.25">
+                <esri:MarkerSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Grid RenderTransformOrigin="0.5,0.5" Width="12.5" Height="12.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Rectangle x:Name="Rectangle" Width="12.5" Height="12.5" Stretch="Fill" Fill="Yellow" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Path Fill="Black" Data="F1 M 10,10L 2.5,10L 6.25,2.5L 10,10 Z " />
+                        </Grid>
+                    </ControlTemplate>
+                </esri:MarkerSymbol.ControlTemplate>
+            </esri:MarkerSymbol>
+            <esri:MarkerSymbol x:Key="MarkerSymbol3" OffsetX="15" OffsetY="15">
+                <esri:MarkerSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Grid RenderTransformOrigin="0.5,0.5" Width="30" Height="30">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                <Ellipse  Width="25" Height="30" Stroke="Black" Fill="Yellow"/>
+                                <Ellipse Width="5" Margin="5 9 10 10" Height="5" Stroke="Black" Fill="Black"/>
+                                <Ellipse Width="5" Margin="15 9 10 10" Height="5" Stroke="Black" Fill="Black" />
+                                <Path Stroke="Black" StrokeThickness="1" >
+                                    <Path.Data>
+                                        <PathGeometry>
+                                            <PathGeometry.Figures>
+                                                <PathFigure StartPoint="20,18" >
+                                                    <PathFigure.Segments>
+                                                        <ArcSegment Size="10,18" RotationAngle="0" IsLargeArc="False" SweepDirection="Clockwise" Point="5, 18"/>                                                       
+                                                    </PathFigure.Segments>
+                                                </PathFigure >
+                                            </PathGeometry.Figures>
+                                        </PathGeometry>
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Grid>
+                    </ControlTemplate>
+                </esri:MarkerSymbol.ControlTemplate>
+            </esri:MarkerSymbol>            
+        </Grid.Resources>
+
+        <esri:Map x:Name="myMap" Margin="0,0,-84,0">
+            <esri:Map.Extent>
+                <esri:Envelope XMin="-125" YMin="29" XMax="-85" YMax="49">
+                    <esri:Envelope.SpatialReference>
+                        <esri:SpatialReference WKID="4326"/>
+                    </esri:Envelope.SpatialReference>
+                </esri:Envelope>
+            </esri:Map.Extent>
+
+            <esri:ArcGISTiledMapServiceLayer Url="http://services.arcgisonline.com/arcgis/rest/services/ESRI_StreetMap_World_2D/MapServer" />
+            <esri:GraphicsLayer x:Name="Graphics_Layer" ID="lyr1" >
+                <esri:Graphic Symbol="{StaticResource RedMarkerSymbol}">
+
+                    <esri:Graphic.Geometry>
+                        <esri:MapPoint X="-93" Y="35">
+                            <esri:MapPoint.SpatialReference>
+                                <esri:SpatialReference WKID="4326"/>
+                            </esri:MapPoint.SpatialReference>
+                        </esri:MapPoint>
+                    </esri:Graphic.Geometry>
+                </esri:Graphic>
+                <esri:Graphic Symbol="{StaticResource MarkerSymbol}">
+                    <esri:Graphic.Geometry>
+                        <esri:MapPoint X="-91" Y="36">
+                            <esri:MapPoint.SpatialReference>
+                                <esri:SpatialReference WKID="4326"/>
+                            </esri:MapPoint.SpatialReference>
+                        </esri:MapPoint>
+                    </esri:Graphic.Geometry>
+                </esri:Graphic>
+                <esri:Graphic Symbol="{StaticResource MarkerSymbol2}">
+
+                    <esri:Graphic.Geometry>
+                        <esri:MapPoint X="-92.5" Y="36">
+                            <esri:MapPoint.SpatialReference>
+                                <esri:SpatialReference WKID="4326"/>
+                            </esri:MapPoint.SpatialReference>
+                        </esri:MapPoint>
+                    </esri:Graphic.Geometry>
+                </esri:Graphic>                
+                
+                <esri:Graphic Symbol="{StaticResource esriBusinessMarker_94}">
+                    <esri:Graphic.Geometry>
+                        <esri:MapPoint X="-92" Y="35">
+                            <esri:MapPoint.SpatialReference>
+                                <esri:SpatialReference WKID="4326"/>
+                            </esri:MapPoint.SpatialReference>
+                        </esri:MapPoint>
+                    </esri:Graphic.Geometry>
+                </esri:Graphic>
+                <esri:Graphic Symbol="{StaticResource MarkerSymbol3}">
+                    <esri:Graphic.Geometry>
+                        <esri:MapPoint X="-91" Y="35">
+                            <esri:MapPoint.SpatialReference>
+                                <esri:SpatialReference WKID="4326"/>
+                            </esri:MapPoint.SpatialReference>
+                        </esri:MapPoint>
+                    </esri:Graphic.Geometry>
+                </esri:Graphic>
+                <esri:Graphic Symbol="{StaticResource CartoLineSymbol}" >
+                  <esri:Polyline >
+                    <esri:Polyline.Paths>
+                      <esri:PointCollection>
+                        <esri:MapPoint X="-118.169" Y="34.016" />
+                        <esri:MapPoint X="-104.941" Y="39.7072" />
+                        <esri:MapPoint X="-96.724" Y="32.732" />
+                        <esri:MapPoint X="-87.671" Y="41.804" />
+                        <esri:MapPoint X="-74" Y="40.68" />
+                      </esri:PointCollection>
+                    </esri:Polyline.Paths>
+                    <esri:Geometry.SpatialReference >
+                      <esri:SpatialReference WKID="4326" />
+                    </esri:Geometry.SpatialReference>
+                  </esri:Polyline>
+                </esri:Graphic>
+        <esri:Graphic Symbol="{StaticResource RedFillSymbol}">
+          <esri:Polygon >
+            <esri:Polygon.Rings>
+              <esri:PointCollection>
+                <esri:MapPoint X="-95" Y="36" />
+                <esri:MapPoint X="-94" Y="36" />
+                <esri:MapPoint X="-94" Y="35" />
+                <esri:MapPoint X="-95" Y="35" />
+                <esri:MapPoint X="-95" Y="36" />
+              </esri:PointCollection>
+            </esri:Polygon.Rings>
+            <esri:Geometry.SpatialReference >
+              <esri:SpatialReference WKID="4326" />
+            </esri:Geometry.SpatialReference>
+          </esri:Polygon>
+        </esri:Graphic>
+
+      </esri:GraphicsLayer>
+        </esri:Map>
+        <Button Height="30" Content="Export" VerticalAlignment="Top" Width="80" HorizontalAlignment="Left" Click="Button_Click"/>
+    </Grid>
+</UserControl>
